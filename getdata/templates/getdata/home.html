@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'getdata/css/home.css' %}">
+    <script>
+        const csrfToken = '{{ csrf_token }}';
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <button class="option-button" onclick="toggleSelection('전남대후문점', this)">전남대후문점</button>
+            <button class="option-button" onclick="toggleSelection('풍암점', this)">풍암점</button>
+            <button class="option-button" onclick="toggleSelection('봉선삼익점', this)">봉선삼익점</button>
+            <button class="option-button" onclick="toggleSelection('나주혁신점', this)">나주혁신점</button>
+            <button class="option-button" onclick="toggleSelection('수완장덕점', this)">수완장덕점</button>
+            <button class="option-button" onclick="toggleSelection('광한루점', this)">광한루점</button>
+            <button class="option-button" onclick="toggleSelection('광양중동점', this)">광양중동점</button>
+            <button class="option-button" onclick="toggleSelection('상무점', this)">상무점</button>
+            <button class="option-button" onclick="toggleSelection('군산미장점', this)">군산미장점</button>
+        </div>
+
+        <div class="date-selection">
+            <div class="start-date">
+                <label for="start-date">시작 날짜 : </label>
+                <input type="date" class="select-date" id="start-date" name="start-date">
+            </div>
+            <div class="end-date">
+                <label for="end-date">종료 날짜 : </label>
+                <input type="date" class="select-date" id="end-date" name="end-date">
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <h3>관리자 계정 로그인</h3>
+            <label for="username">관리자 아이디 : </label>
+            <input type="text" class="input-admin" id="username" name="username" placeholder="ID">
+            
+            <label for="password">관리자 비밀번호 : </label>
+            <input type="password" class="input-admin" id="password" name="password" placeholder="Password">
+            
+            <button type="submit" class="submitBtn" onclick="submitForm()">데이터 수집 시작</button>
+        </div>
+        <div id="timer" style="font-size: 20px; margin-top: 20px;"></div>
+    </div>
+
+    <script src="{% static 'getdata/js/home.js' %}"></script>
+</body>
+</html>

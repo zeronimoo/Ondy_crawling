@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.button-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.option-button {
+    display: flex;
+    height: 100px;
+    width: 150px;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    position: relative;
+    top: 0;
+}
+
+.option-button:hover {
+    background-color: #0056b3;
+    transform: translateY(4px);
+}
+
+.selected {
+    background-color: #0056b3;
+    color: white;
+    transform: translateY(4px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.date-selection {
+    width: 20%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-date {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.end-date {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-date {
+    width: 30%;
+    height: 80%;
+    text-align: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 25%;
+    margin-top: 20px;
+    /* text-align: left; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-admin {
+    width: 80%;
+    height: 10%;
+}
+
+.submitBtn {
+    width: 50%;
+    height: 15%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.submitBtn:hover {
+    background-color: #0056b3;
+    color: white;
+}
