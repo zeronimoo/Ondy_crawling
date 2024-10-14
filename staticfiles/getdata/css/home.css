@@ -71,7 +71,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
@@ -81,20 +81,40 @@ body {
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
 .select-date {
-    display: flex;
-    width: 60%;
+    width: 30%;
     height: 80%;
+    text-align: center;
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
     width: 20%;
+    height: 25%;
     margin-top: 20px;
-    text-align: left;
+    /* text-align: left; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-admin {
+    width: 80%;
+    height: 10%;
+}
+
+.submitBtn {
+    width: 50%;
+    height: 15%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.submitBtn:hover {
+    background-color: #0056b3;
+    color: white;
 }

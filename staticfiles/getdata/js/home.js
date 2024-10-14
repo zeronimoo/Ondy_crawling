@@ -12,7 +12,6 @@ const storeUrls = {
 
 let selectedStores = [];
 let timerInterval;
-let estimatedTime = 20;
 
 function toggleSelection(store, button) {
     const index = selectedStores.indexOf(store);
@@ -40,12 +39,26 @@ function submitForm() {
     }
 
     let elapsedTime = 0;
-    document.getElementById('timer').innerText = `경과 시간 : ${elapsedTime}초\n예상 시간 : ${estimatedTime}초`;
+    document.getElementById('timer').innerText = `진행 시간 : ${elapsedTime}초`;
 
     // 타이머 업데이트
     timerInterval = setInterval(() => {
         elapsedTime++;
-        document.getElementById('timer').innerText = `경과 시간 : ${elapsedTime}초\n예상 시간 : ${estimatedTime}분`;
+        const hours = Math.floor(elapsedTime / 3600);
+        const minutes = Math.floor((elapsedTime % 3600) / 60);
+        const seconds = elapsedTime % 60;
+
+        let timeString = "진행 시간 : ";
+
+        if (hours > 0) {
+            timeString += `${hours}시간 `;
+        }
+        if (minutes > 0) {
+            timeString += `${minutes}분 `;
+        }
+        timeString += `${seconds}초`;
+
+        document.getElementById('timer').innerText = timeString;
     }, 1000);
 
     const urls = selectedStores.map(store => storeUrls[store]);
@@ -54,7 +67,7 @@ function submitForm() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // 'X-CSRFToken': getCSRFToken()
+            'X-CSRFToken': csrfToken
         },
         body: JSON.stringify({
             username: username,
@@ -80,7 +93,6 @@ function submitForm() {
         link.click(); // 다운로드 실행
         link.parentNode.removeChild(link); // 링크 제거
         clearInterval(timerInterval);  // 타이머 중지
-        // alert('Final file created successfully')
     })
     .catch(error => {
         console.error('Error :', error);
@@ -88,10 +100,3 @@ function submitForm() {
         clearInterval(timerInterval);  // 타이머 중지
     });
 }
-
-// function getCSRFToken() {
-//     const cookieValue = documnet.cookie.split('; ')
-//         .find(row => row.startsWith('csrftoken'))
-//         ?.split('=')[1];
-//     return cookieValue || '';
-// }
