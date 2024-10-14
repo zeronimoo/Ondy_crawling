@@ -82,6 +82,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'crawling.wsgi.application'
 
+CORS_ALLOWED_ORIGINS = ["ec2-43-203-223-60.ap-northeast-2.compute.amazonaws.com"]
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
