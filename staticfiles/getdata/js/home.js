@@ -63,7 +63,7 @@ function submitForm() {
 
     const urls = selectedStores.map(store => storeUrls[store]);
 
-    fetch('http://127.0.0.1:8000/home/getdata/', {
+    fetch('getdata/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
