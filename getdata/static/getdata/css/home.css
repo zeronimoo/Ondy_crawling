@@ -19,6 +19,15 @@ body {
     height: 100%;
 }
 
+.info {
+    display: flex;
+}
+
+.info_text {
+    text-align: center;
+    color: black;
+}
+
 .button-container {
     display: flex;
     margin-bottom: 20px;
